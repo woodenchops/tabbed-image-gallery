@@ -27,6 +27,12 @@ var links = document.querySelectorAll('a');
 
 
 
+        localPath = "/images/album1/"; // this code will automatically generate images from album 1 when the page loads 
+        for (let i = 0; i < imagesName.album1.length; i++) {
+                createImg(localPath + imagesName.album1[i]); 
+        }
+
+
 
     function deleteImages() { // delete any images that were in the .image-container 
         
@@ -43,46 +49,40 @@ var links = document.querySelectorAll('a');
 
 
     
-    
     links.forEach((link) => { // loop through <a> tags and create click event on each 
         link.addEventListener('click', () => {
-            
-            switch(link.textContent) { // check name of link clicked 
+
+            switch (link.textContent) { // check name of link clicked 
                 case "image 1":
-    
+
                     deleteImages();
                     localPath = "/images/album1/"; // folder directory path to album 1
                     for (let i = 0; i < imagesName.album1.length; i++) {
-                            createImg(localPath + imagesName.album1[i]); // join folder directory with image name to create img src attr 
+                        createImg(localPath + imagesName.album1[i]); // join folder directory with image name to create img src attr 
                     }
-                    
-                    
+
+
                     break;
                 case "image 2":
-                    
-                        deleteImages();
-                        localPath = "/images/album2/";  // folder directory path to album 2
+
+                    deleteImages();
+                    localPath = "/images/album2/"; // folder directory path to album 2
                     for (let i = 0; i < imagesName.album2.length; i++) {
-                            createImg(localPath + imagesName.album2[i]); // join folder directory with image name to create img src attr 
+                        createImg(localPath + imagesName.album2[i]); // join folder directory with image name to create img src attr 
                     }
-                    
-                    
-                    
-                    
-    
+
+
                     break;
                 case "image 3":
-    
+
                     deleteImages();
-                    localPath = "/images/album3/";  // folder directory path to album 3
-                  for (let i = 0; i < imagesName.album3.length; i++) {
-                                createImg(localPath + imagesName.album3[i]); // join folder directory with image name to create img src attr 
-                        }
-                    
-                    
-                    
+                    localPath = "/images/album3/"; // folder directory path to album 3
+                    for (let i = 0; i < imagesName.album3.length; i++) {
+                        createImg(localPath + imagesName.album3[i]); // join folder directory with image name to create img src attr 
+                    }
+
                     break;
             }
-           
+
         });
     });
