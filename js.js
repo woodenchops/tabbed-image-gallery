@@ -1,3 +1,4 @@
+(function() {
 var links = document.querySelectorAll('a'); // grab all <a> tags that trigger the image gallery
     var imageContainer = document.querySelector('.image-container'); // grab the div that will contain the imahges
     var localPath; // create an undefined variable that will later create the first part of the path to each image
@@ -86,3 +87,5 @@ var links = document.querySelectorAll('a'); // grab all <a> tags that trigger th
 
         });
     });
+    
+    })();
