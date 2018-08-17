@@ -1,11 +1,11 @@
-var links = document.querySelectorAll('a');
-    var imageContainer = document.querySelector('.image-container');
-    var localPath;
+var links = document.querySelectorAll('a'); // grab all <a> tags that trigger the image gallery
+    var imageContainer = document.querySelector('.image-container'); // grab the div that will contain the imahges
+    var localPath; // create an undefined variable that will later create the first part of the path to each image
     
     
     var imagesName = { // array of image names 
       
-            "album1": ["pexels-photo-412537.jpeg", "pexels-photo-748898.jpeg", "pexels-photo-1313191.jpeg"],
+            "album1": ["pexels-photo-412537.jpeg", "pexels-photo-748898.jpeg", "pexels-photo-1313191.jpeg", "pexels-photo-935973.jpeg"],
         
             "album2": ["pexels-photo-426893.jpeg", "pexels-photo-573241.jpeg", "pexels-photo-1139370.jpeg"],
         
