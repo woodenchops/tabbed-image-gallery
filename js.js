@@ -6,7 +6,7 @@ var links = document.querySelectorAll('a'); // grab all <a> tags that trigger th
     
     var imagesName = { // array of image names 
       
-            "album1": ["pexels-photo-412537.jpeg", "pexels-photo-748898.jpeg", "pexels-photo-1313191.jpeg"],
+            "album1": ["pexels-photo-412537.jpeg", "pexels-photo-748898.jpeg", "pexels-photo-1166418.jpeg"],
         
             "album2": ["pexels-photo-426893.jpeg", "pexels-photo-573241.jpeg", "pexels-photo-1139370.jpeg"],
         
@@ -54,7 +54,7 @@ var links = document.querySelectorAll('a'); // grab all <a> tags that trigger th
         link.addEventListener('click', () => {
 
             switch (link.textContent) { // check name of link clicked 
-                case "image 1":
+                case "album 1":
 
                     deleteImages();
                     localPath = "/images/album1/"; // folder directory path to album 1
@@ -64,7 +64,7 @@ var links = document.querySelectorAll('a'); // grab all <a> tags that trigger th
 
 
                     break;
-                case "image 2":
+                case "album 2":
 
                     deleteImages();
                     localPath = "/images/album2/"; // folder directory path to album 2
@@ -74,7 +74,7 @@ var links = document.querySelectorAll('a'); // grab all <a> tags that trigger th
 
 
                     break;
-                case "image 3":
+                case "album 3":
 
                     deleteImages();
                     localPath = "/images/album3/"; // folder directory path to album 3
@@ -84,7 +84,7 @@ var links = document.querySelectorAll('a'); // grab all <a> tags that trigger th
 
                     break;
                     
-                case "all":
+                case "all": // display all images at once
                     deleteImages();
                     let album1path = "/images/album1/";
                     let album2path = "/images/album2/";
