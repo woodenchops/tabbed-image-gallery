@@ -1,10 +1,10 @@
 (function() {
-var links = document.querySelectorAll('a'); // grab all <a> tags that trigger the image gallery
-    var imageContainer = document.querySelector('.image-container'); // grab the div that will contain the imahges
-    var localPath; // create an undefined variable that will later create the first part of the path to each image
+    let links = document.querySelectorAll('a'); // grab all <a> tags that trigger the image gallery
+    let imageContainer = document.querySelector('.image-container'); // grab the div that will contain the imahges
+    let localPath; // create an undefined variable that will later create the first part of the path to each image
     
     
-    var imagesName = { // array of image names 
+    let imagesName = { // array of image names 
       
             "album1": ["pexels-photo-412537.jpeg", "pexels-photo-748898.jpeg", "pexels-photo-1166418.jpeg"],
         
@@ -19,25 +19,16 @@ var links = document.querySelectorAll('a'); // grab all <a> tags that trigger th
         
     function createImg(src) { // after the deleteImages function runs, populate the .image-container with new images 
         
-            var img = document.createElement("img");
+            let img = document.createElement("img");
             img.src = src;
             imageContainer.appendChild(img);
     
     }
 
 
-
-
-        localPath = "/images/album1/"; // this code will automatically generate images from album 1 when the page loads 
-        for (let i = 0; i < imagesName.album1.length; i++) {
-                createImg(localPath + imagesName.album1[i]); 
-        }
-
-
-
     function deleteImages() { // delete any images that were in the .image-container 
         
-        var images = document.querySelectorAll('.image-container img');
+        let images = document.querySelectorAll('.image-container img');
         
         if(imageContainer.childElementCount > 0) { // check if .image-container has any children - if so, delete them. 
         
@@ -47,7 +38,12 @@ var links = document.querySelectorAll('a'); // grab all <a> tags that trigger th
             
         }
     }
-
+    
+    
+        localPath = "/images/album1/"; // this code will automatically generate images from album 1 when the page loads 
+        for (let i = 0; i < imagesName.album1.length; i++) {
+            createImg(localPath + imagesName.album1[i]);
+        }
 
     
     links.forEach((link) => { // loop through <a> tags and create click event on each 
