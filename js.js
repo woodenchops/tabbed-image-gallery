@@ -6,7 +6,7 @@ var links = document.querySelectorAll('a'); // grab all <a> tags that trigger th
     
     var imagesName = { // array of image names 
       
-            "album1": ["pexels-photo-412537.jpeg", "pexels-photo-748898.jpeg", "pexels-photo-1313191.jpeg", "pexels-photo-935973.jpeg"],
+            "album1": ["pexels-photo-412537.jpeg", "pexels-photo-748898.jpeg", "pexels-photo-1313191.jpeg"],
         
             "album2": ["pexels-photo-426893.jpeg", "pexels-photo-573241.jpeg", "pexels-photo-1139370.jpeg"],
         
@@ -82,6 +82,24 @@ var links = document.querySelectorAll('a'); // grab all <a> tags that trigger th
                         createImg(localPath + imagesName.album3[i]); // join folder directory with image name to create img src attr 
                     }
 
+                    break;
+                    
+                case "all":
+                    deleteImages();
+                    let album1path = "/images/album1/";
+                    let album2path = "/images/album2/";
+                    let album3path = "/images/album3/";
+                    for (let i = 0; i < imagesName.album1.length; i++) {
+                        createImg(album1path + imagesName.album1[i]); // join folder directory with image name to create img src attr 
+                    }
+                    
+                    for (let i = 0; i < imagesName.album2.length; i++) {
+                        createImg(album2path + imagesName.album2[i]); // join folder directory with image name to create img src attr 
+                    }
+                    
+                    for (let i = 0; i < imagesName.album3.length; i++) {
+                        createImg(album3path + imagesName.album3[i]); // join folder directory with image name to create img src attr 
+                    }
                     break;
             }
 
