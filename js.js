@@ -1,16 +1,21 @@
 (function() {
     let links = document.querySelectorAll('a'); // grab all <a> tags that trigger the image gallery
-    let imageContainer = document.querySelector('.image-container'); // grab the div that will contain the imahges
-    let localPath; // create an undefined variable that will later create the first part of the path to each image
+    let imageContainer = document.querySelector('.image-container'); // grab the div that will contain the images
     
     
     let imagesName = { // array of image names 
       
-            "album1": ["pexels-photo-412537.jpeg", "pexels-photo-748898.jpeg", "pexels-photo-1166418.jpeg"],
+            "album1": ["/images/album1/pexels-photo-412537.jpeg", 
+                       "/images/album1/pexels-photo-748898.jpeg", 
+                       "/images/album1/pexels-photo-1166418.jpeg"],
         
-            "album2": ["pexels-photo-426893.jpeg", "pexels-photo-573241.jpeg", "pexels-photo-1139370.jpeg"],
+            "album2": ["/images/album2/pexels-photo-426893.jpeg", 
+                       "/images/album2/pexels-photo-573241.jpeg", 
+                       "/images/album2/pexels-photo-1139370.jpeg"],
         
-            "album3": ["pexels-photo-58625.jpeg", "pexels-photo-1308684.jpeg", "pexels-photo-1308754.jpeg"]
+            "album3": ["/images/album3/pexels-photo-58625.jpeg", 
+                       "/images/album3/pexels-photo-1308684.jpeg", 
+                       "/images/album3/pexels-photo-1308754.jpeg"]
         
     };
     
@@ -40,9 +45,9 @@
     }
     
     
-        localPath = "/images/album1/"; // this code will automatically generate images from album 1 when the page loads 
+ // this code will automatically generate images from album 1 when the page loads 
         for (let i = 0; i < imagesName.album1.length; i++) {
-            createImg(localPath + imagesName.album1[i]);
+            createImg(imagesName.album1[i]);
         }
 
     
@@ -54,9 +59,9 @@
                 case "album 1":
 
                     deleteImages();
-                    localPath = "/images/album1/"; // folder directory path to album 1
+
                     for (let i = 0; i < imagesName.album1.length; i++) {
-                        createImg(localPath + imagesName.album1[i]); // join folder directory with image name to create img src attr 
+                        createImg(imagesName.album1[i]); // join folder directory with image name to create img src attr 
                     }
 
 
@@ -64,9 +69,9 @@
                 case "album 2":
 
                     deleteImages();
-                    localPath = "/images/album2/"; // folder directory path to album 2
+
                     for (let i = 0; i < imagesName.album2.length; i++) {
-                        createImg(localPath + imagesName.album2[i]); // join folder directory with image name to create img src attr 
+                        createImg(imagesName.album2[i]); // join folder directory with image name to create img src attr 
                     }
 
 
@@ -74,32 +79,23 @@
                 case "album 3":
 
                     deleteImages();
-                    localPath = "/images/album3/"; // folder directory path to album 3
+
                     for (let i = 0; i < imagesName.album3.length; i++) {
-                        createImg(localPath + imagesName.album3[i]); // join folder directory with image name to create img src attr 
+                        createImg(imagesName.album3[i]); // join folder directory with image name to create img src attr 
                     }
 
                     break;
                     
                 case "all": // display all images at once
                     deleteImages();
-                    let album1path = "/images/album1/";
-                    let album2path = "/images/album2/";
-                    let album3path = "/images/album3/";
-                    for (let i = 0; i < imagesName.album1.length; i++) {
-                        createImg(album1path + imagesName.album1[i]); // join folder directory with image name to create img src attr 
+                    
+                    let allImagesArray = imagesName.album1.concat(imagesName.album2, imagesName.album3);
+
+                    for(let i = 0; i < allImagesArray.length; i++) {
+                        createImg(allImagesArray[i]);
                     }
                     
-                    for (let i = 0; i < imagesName.album2.length; i++) {
-                        createImg(album2path + imagesName.album2[i]); // join folder directory with image name to create img src attr 
-                    }
-                    
-                    for (let i = 0; i < imagesName.album3.length; i++) {
-                        createImg(album3path + imagesName.album3[i]); // join folder directory with image name to create img src attr 
-                    }
-                    
-                    
-                
+
                     break;
             }
 
