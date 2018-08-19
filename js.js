@@ -47,7 +47,8 @@
 
     
     links.forEach((link) => { // loop through <a> tags and create click event on each 
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
 
             switch (link.textContent) { // check name of link clicked 
                 case "album 1":
