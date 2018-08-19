@@ -1,4 +1,4 @@
-(function() {
+(function() { // wrap code in IIFE to keep it from global scope
     let links = document.querySelectorAll('a'); // grab all <a> tags that trigger the image gallery
     let imageContainer = document.querySelector('.image-container'); // grab the div that will contain the images
     
@@ -27,7 +27,7 @@
         if (imageContainer.childElementCount > 0) { // check if .image-container has any children - if so, delete them. 
 
             images.forEach((img) => {
-                imageContainer.removeChild(img);
+                imageContainer.removeChild(img); // loop through each image in container div and delete them
             });
 
         }
@@ -38,16 +38,16 @@
         
     function createImg(src) { // after the deleteImages function runs, populate the .image-container with new images 
         
-            let img = document.createElement("img");
-            img.src = src;
-            imageContainer.appendChild(img);
+            let img = document.createElement("img"); // create image 
+            img.src = src; // insert src argument provided for image src attr
+            imageContainer.appendChild(img); // add image to container div
     
     }
     
     
  // this code will automatically generate images from album 1 when the page loads 
         for (let i = 0; i < imagesName.album1.length; i++) {
-            createImg(imagesName.album1[i]);
+            createImg(imagesName.album1[i]); // create images
         }
 
     
@@ -61,7 +61,7 @@
                     deleteImages(); // delete all images that were prev there
 
                     for (let i = 0; i < imagesName.album1.length; i++) {
-                        createImg(imagesName.album1[i]); // create img src attr 
+                        createImg(imagesName.album1[i]); // create images 
                     }
 
 
@@ -71,7 +71,7 @@
                     deleteImages(); // delete all images that were prev there 
 
                     for (let i = 0; i < imagesName.album2.length; i++) {
-                        createImg(imagesName.album2[i]); // create img src attr
+                        createImg(imagesName.album2[i]); // create imgaes 
                     }
 
 
@@ -81,7 +81,7 @@
                     deleteImages(); // delete all images that were prev there
 
                     for (let i = 0; i < imagesName.album3.length; i++) {
-                        createImg(imagesName.album3[i]); // create img src attr
+                        createImg(imagesName.album3[i]); // create imgages 
                     }
 
                     break;
@@ -94,7 +94,7 @@
                     let allImagesArray = imagesName.album1.concat(imagesName.album2, imagesName.album3);
 
                     for(let i = 0; i < allImagesArray.length; i++) {
-                        createImg(allImagesArray[i]);
+                        createImg(allImagesArray[i]); // create images
                     }
                     
 
