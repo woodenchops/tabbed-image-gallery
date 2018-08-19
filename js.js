@@ -20,6 +20,20 @@
     };
     
     
+    function deleteImages() { // delete any images that were in the .image-container 
+
+        let images = document.querySelectorAll('.image-container img');
+
+        if (imageContainer.childElementCount > 0) { // check if .image-container has any children - if so, delete them. 
+
+            images.forEach((img) => {
+                imageContainer.removeChild(img);
+            });
+
+        }
+    }
+    
+    
 
         
     function createImg(src) { // after the deleteImages function runs, populate the .image-container with new images 
@@ -28,20 +42,6 @@
             img.src = src;
             imageContainer.appendChild(img);
     
-    }
-
-
-    function deleteImages() { // delete any images that were in the .image-container 
-        
-        let images = document.querySelectorAll('.image-container img');
-        
-        if(imageContainer.childElementCount > 0) { // check if .image-container has any children - if so, delete them. 
-        
-            images.forEach((img) => {
-                imageContainer.removeChild(img);
-            }); 
-            
-        }
     }
     
     
@@ -56,38 +56,40 @@
             e.preventDefault();
 
             switch (link.textContent) { // check name of link clicked 
-                case "album 1":
+                case "album 1": // link 1 text
 
-                    deleteImages();
+                    deleteImages(); // delete all images that were prev there
 
                     for (let i = 0; i < imagesName.album1.length; i++) {
-                        createImg(imagesName.album1[i]); // join folder directory with image name to create img src attr 
+                        createImg(imagesName.album1[i]); // create img src attr 
                     }
 
 
                     break;
-                case "album 2":
+                case "album 2": // link 2 text
 
-                    deleteImages();
+                    deleteImages(); // delete all images that were prev there 
 
                     for (let i = 0; i < imagesName.album2.length; i++) {
-                        createImg(imagesName.album2[i]); // join folder directory with image name to create img src attr 
+                        createImg(imagesName.album2[i]); // create img src attr
                     }
 
 
                     break;
-                case "album 3":
+                case "album 3": // link 3 text
 
-                    deleteImages();
+                    deleteImages(); // delete all images that were prev there
 
                     for (let i = 0; i < imagesName.album3.length; i++) {
-                        createImg(imagesName.album3[i]); // join folder directory with image name to create img src attr 
+                        createImg(imagesName.album3[i]); // create img src attr
                     }
 
                     break;
                     
-                case "all": // display all images at once
-                    deleteImages();
+                case "all": // // link 4 text - display all images at once
+                    deleteImages(); // delete all images that were prev there
+                    
+                    // concat all arrays together, so that you can loop through all images at once.
                     
                     let allImagesArray = imagesName.album1.concat(imagesName.album2, imagesName.album3);
 
