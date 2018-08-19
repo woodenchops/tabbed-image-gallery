@@ -96,6 +96,9 @@
                     for (let i = 0; i < imagesName.album3.length; i++) {
                         createImg(album3path + imagesName.album3[i]); // join folder directory with image name to create img src attr 
                     }
+                    
+                    
+                
                     break;
             }
 
